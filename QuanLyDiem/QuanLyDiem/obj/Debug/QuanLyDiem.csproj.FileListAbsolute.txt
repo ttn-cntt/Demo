@@ -8,3 +8,21 @@ C:\Users\DELL\Documents\Visual Studio 2015\Projects\New folder\QuanLyDiem\QuanLy
 C:\Users\DELL\Documents\Visual Studio 2015\Projects\New folder\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.exe
 C:\Users\DELL\Documents\Visual Studio 2015\Projects\New folder\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.pdb
 C:\Users\DELL\Documents\Visual Studio 2015\Projects\New folder\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmMain.resources
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.exe.config
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.exe
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.pdb
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.exe
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.pdb
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\mscorlib.dll
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\System.Net.Http.dll
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\System.Net.Http.xml
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\normidna.nlp
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\normnfc.nlp
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\normnfd.nlp
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\normnfkc.nlp
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\normnfkd.nlp
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmMain.resources
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmSinhVien.resources
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.Properties.Resources.resources
+C:\Users\Administrator\Desktop\diem\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.GenerateResource.Cache

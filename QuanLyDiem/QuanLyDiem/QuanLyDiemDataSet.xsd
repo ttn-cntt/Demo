@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyDiemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyDiemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyDiem.Properties.Settings.GlobalReference.Default.QuanLyDiemConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QuanLyDiemConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QuanLyDiemConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyDiem.Properties.Settings.GlobalReference.Default.QuanLyDiemConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DangNhapTableAdapter" GeneratorDataComponentClassName="DangNhapTableAdapter" Name="DangNhap" UserDataComponentName="DangNhapTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.DangNhap" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.DangNhap" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[DangNhap] ([username], [password]) VALUES (@username, @password)</CommandText>
@@ -35,7 +35,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DiemTableAdapter" GeneratorDataComponentClassName="DiemTableAdapter" Name="Diem" UserDataComponentName="DiemTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.Diem" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.Diem" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[Diem] ([MaMon], [DiemHS1], [DiemHS2]) VALUES (@MaMon, @DiemHS1, @DiemHS2)</CommandText>
@@ -64,7 +64,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HocKyTableAdapter" GeneratorDataComponentClassName="HocKyTableAdapter" Name="HocKy" UserDataComponentName="HocKyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.HocKy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.HocKy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[HocKy] WHERE (([MaHK] = @Original_MaHK) AND ((@IsNull_TenHK = 1 AND [TenHK] IS NULL) OR ([TenHK] = @Original_TenHK)))</CommandText>
@@ -113,7 +113,7 @@ SELECT MaHK, TenHK FROM HocKy WHERE (MaHK = @MaHK)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LopTableAdapter" GeneratorDataComponentClassName="LopTableAdapter" Name="Lop" UserDataComponentName="LopTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.Lop" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.Lop" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Lop] WHERE (([MaLop] = @Original_MaLop) AND ((@IsNull_TenLop = 1 AND [TenLop] IS NULL) OR ([TenLop] = @Original_TenLop)))</CommandText>
@@ -162,7 +162,7 @@ SELECT MaLop, TenLop FROM Lop WHERE (MaLop = @MaLop)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MonHocTableAdapter" GeneratorDataComponentClassName="MonHocTableAdapter" Name="MonHoc" UserDataComponentName="MonHocTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.MonHoc" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.MonHoc" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[MonHoc] WHERE (([MaMon] = @Original_MaMon) AND ((@IsNull_TenMon = 1 AND [TenMon] IS NULL) OR ([TenMon] = @Original_TenMon)) AND ((@IsNull_SoTC = 1 AND [SoTC] IS NULL) OR ([SoTC] = @Original_SoTC)) AND ((@IsNull_MaHK = 1 AND [MaHK] IS NULL) OR ([MaHK] = @Original_MaHK)))</CommandText>
@@ -226,7 +226,7 @@ SELECT MaMon, TenMon, SoTC, MaHK FROM MonHoc WHERE (MaMon = @MaMon)</CommandText
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SinhVienTableAdapter" GeneratorDataComponentClassName="SinhVienTableAdapter" Name="SinhVien" UserDataComponentName="SinhVienTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.SinhVien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.SinhVien" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[SinhVien] WHERE (([MaSV] = @Original_MaSV) AND ((@IsNull_TenSV = 1 AND [TenSV] IS NULL) OR ([TenSV] = @Original_TenSV)) AND ((@IsNull_NgaySinh = 1 AND [NgaySinh] IS NULL) OR ([NgaySinh] = @Original_NgaySinh)) AND ((@IsNull_GioiTinh = 1 AND [GioiTinh] IS NULL) OR ([GioiTinh] = @Original_GioiTinh)) AND ((@IsNull_DanToc = 1 AND [DanToc] IS NULL) OR ([DanToc] = @Original_DanToc)) AND ((@IsNull_Diachi = 1 AND [Diachi] IS NULL) OR ([Diachi] = @Original_Diachi)) AND ((@IsNull_MaLop = 1 AND [MaLop] IS NULL) OR ([MaLop] = @Original_MaLop)))</CommandText>
@@ -310,7 +310,7 @@ SELECT MaSV, TenSV, NgaySinh, GioiTinh, DanToc, Diachi, MaLop FROM SinhVien WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetAllStudentInfoTableAdapter" GeneratorDataComponentClassName="GetAllStudentInfoTableAdapter" Name="GetAllStudentInfo" UserDataComponentName="GetAllStudentInfoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.GetAllStudentInfo" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.GetAllStudentInfo" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.GetAllStudentInfo</CommandText>
@@ -334,7 +334,7 @@ SELECT MaSV, TenSV, NgaySinh, GioiTinh, DanToc, Diachi, MaLop FROM SinhVien WHER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SearchStudentTableAdapter" GeneratorDataComponentClassName="SearchStudentTableAdapter" Name="SearchStudent" UserDataComponentName="SearchStudentTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.SearchStudent" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.SearchStudent" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SearchStudent</CommandText>
@@ -359,7 +359,7 @@ SELECT MaSV, TenSV, NgaySinh, GioiTinh, DanToc, Diachi, MaLop FROM SinhVien WHER
           </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.Deletestudent" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Deletestudent" MethodsParameterType="CLR" Modifier="Public" Name="Deletestudent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Deletestudent">
+          <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.Deletestudent" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="Deletestudent" MethodsParameterType="CLR" Modifier="Public" Name="Deletestudent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Deletestudent">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.Deletestudent</CommandText>
@@ -370,7 +370,7 @@ SELECT MaSV, TenSV, NgaySinh, GioiTinh, DanToc, Diachi, MaLop FROM SinhVien WHER
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.InsertStudent" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertStudent" MethodsParameterType="CLR" Modifier="Public" Name="InsertStudent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertStudent">
+          <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.InsertStudent" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InsertStudent" MethodsParameterType="CLR" Modifier="Public" Name="InsertStudent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertStudent">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.InsertStudent</CommandText>
@@ -386,7 +386,7 @@ SELECT MaSV, TenSV, NgaySinh, GioiTinh, DanToc, Diachi, MaLop FROM SinhVien WHER
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="QuanLyDiemConnectionString (Settings)" DbObjectName="QuanLyDiem.dbo.UpdateStudent" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateStudent" MethodsParameterType="CLR" Modifier="Public" Name="UpdateStudent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateStudent">
+          <DbSource ConnectionRef="QuanLyDiemConnectionString1 (Settings)" DbObjectName="QuanLyDiem.dbo.UpdateStudent" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateStudent" MethodsParameterType="CLR" Modifier="Public" Name="UpdateStudent" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="UpdateStudent">
             <SelectCommand>
               <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                 <CommandText>dbo.UpdateStudent</CommandText>

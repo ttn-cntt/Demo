@@ -39,25 +39,29 @@
             this.rdNam = new System.Windows.Forms.RadioButton();
             this.rdNu = new System.Windows.Forms.RadioButton();
             this.dtNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.cblop = new System.Windows.Forms.ComboBox();
+            this.quanLyDiemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtdantoc = new System.Windows.Forms.TextBox();
             this.rdDiachi = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnTK = new System.Windows.Forms.Button();
             this.txtTK = new System.Windows.Forms.TextBox();
             this.dataGridViewSinhVien = new System.Windows.Forms.DataGridView();
-            this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
-            this.quanLyDiemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSetTableAdapters.LopTableAdapter();
             this.lbStatus = new System.Windows.Forms.StatusStrip();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cblop = new System.Windows.Forms.ComboBox();
+            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
+            this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSetTableAdapters.LopTableAdapter();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).BeginInit();
+            this.lbStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -120,10 +124,12 @@
             this.txtTensv.Name = "txtTensv";
             this.txtTensv.Size = new System.Drawing.Size(118, 20);
             this.txtTensv.TabIndex = 6;
+            this.txtTensv.TextChanged += new System.EventHandler(this.txtTensv_TextChanged);
             // 
             // rdNam
             // 
             this.rdNam.AutoSize = true;
+            this.rdNam.Checked = true;
             this.rdNam.Location = new System.Drawing.Point(72, 54);
             this.rdNam.Name = "rdNam";
             this.rdNam.Size = new System.Drawing.Size(47, 17);
@@ -151,23 +157,13 @@
             this.dtNgaySinh.Size = new System.Drawing.Size(123, 20);
             this.dtNgaySinh.TabIndex = 9;
             // 
-            // cblop
-            // 
-            this.cblop.DataSource = this.lopBindingSource;
-            this.cblop.DisplayMember = "TenLop";
-            this.cblop.FormattingEnabled = true;
-            this.cblop.Location = new System.Drawing.Point(281, 17);
-            this.cblop.Name = "cblop";
-            this.cblop.Size = new System.Drawing.Size(121, 21);
-            this.cblop.TabIndex = 10;
-            this.cblop.ValueMember = "MaLop";
-            // 
             // txtdantoc
             // 
             this.txtdantoc.Location = new System.Drawing.Point(281, 49);
             this.txtdantoc.Name = "txtdantoc";
             this.txtdantoc.Size = new System.Drawing.Size(121, 20);
             this.txtdantoc.TabIndex = 12;
+            this.txtdantoc.TextChanged += new System.EventHandler(this.txtdantoc_TextChanged);
             // 
             // rdDiachi
             // 
@@ -176,57 +172,61 @@
             this.rdDiachi.Size = new System.Drawing.Size(121, 50);
             this.rdDiachi.TabIndex = 13;
             this.rdDiachi.Text = "";
+            this.rdDiachi.TextChanged += new System.EventHandler(this.rdDiachi_TextChanged);
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(428, 18);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThem.Location = new System.Drawing.Point(428, 34);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 14;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnSua
             // 
-            this.button2.Location = new System.Drawing.Point(520, 18);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSua.Location = new System.Drawing.Point(521, 34);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.TabIndex = 15;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // button3
+            // btnXoa
             // 
-            this.button3.Location = new System.Drawing.Point(428, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnXoa.Location = new System.Drawing.Point(428, 83);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.TabIndex = 16;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnThoat
             // 
-            this.button4.Location = new System.Drawing.Point(520, 58);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Thoát";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnThoat.Location = new System.Drawing.Point(521, 78);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 17;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // btnTK
             // 
-            this.button5.Location = new System.Drawing.Point(115, 141);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Tìm Kiếm";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnTK.Location = new System.Drawing.Point(115, 141);
+            this.btnTK.Name = "btnTK";
+            this.btnTK.Size = new System.Drawing.Size(75, 23);
+            this.btnTK.TabIndex = 18;
+            this.btnTK.Text = "Tìm Kiếm";
+            this.btnTK.UseVisualStyleBackColor = true;
             // 
             // txtTK
             // 
             this.txtTK.Location = new System.Drawing.Point(228, 144);
             this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(178, 20);
+            this.txtTK.Size = new System.Drawing.Size(225, 20);
             this.txtTK.TabIndex = 19;
             // 
             // dataGridViewSinhVien
@@ -234,53 +234,71 @@
             this.dataGridViewSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSinhVien.Location = new System.Drawing.Point(-1, 170);
             this.dataGridViewSinhVien.Name = "dataGridViewSinhVien";
-            this.dataGridViewSinhVien.Size = new System.Drawing.Size(611, 177);
+            this.dataGridViewSinhVien.Size = new System.Drawing.Size(611, 164);
             this.dataGridViewSinhVien.TabIndex = 20;
             this.dataGridViewSinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSinhVien_CellContentClick);
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.lbStatus.Location = new System.Drawing.Point(0, 337);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(608, 22);
+            this.lbStatus.TabIndex = 21;
+            this.lbStatus.Text = "có 20 sinh viên";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(85, 17);
+            this.toolStripStatusLabel1.Text = "có 20 sinh viên";
+            // 
+            // cblop
+            // 
+            this.cblop.DataSource = this.lopBindingSource;
+            this.cblop.DisplayMember = "TenLop";
+            this.cblop.FormattingEnabled = true;
+            this.cblop.Location = new System.Drawing.Point(281, 21);
+            this.cblop.Name = "cblop";
+            this.cblop.Size = new System.Drawing.Size(121, 21);
+            this.cblop.TabIndex = 23;
+            this.cblop.ValueMember = "MaLop";
+            // 
+            // lopBindingSource
+            // 
+            this.lopBindingSource.DataMember = "Lop";
+            this.lopBindingSource.DataSource = this.quanLyDiemDataSet;
             // 
             // quanLyDiemDataSet
             // 
             this.quanLyDiemDataSet.DataSetName = "QuanLyDiemDataSet";
             this.quanLyDiemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // quanLyDiemDataSetBindingSource
-            // 
-            this.quanLyDiemDataSetBindingSource.DataSource = this.quanLyDiemDataSet;
-            this.quanLyDiemDataSetBindingSource.Position = 0;
-            // 
-            // lopBindingSource
-            // 
-            this.lopBindingSource.DataMember = "Lop";
-            this.lopBindingSource.DataSource = this.quanLyDiemDataSetBindingSource;
-            // 
             // lopTableAdapter
             // 
             this.lopTableAdapter.ClearBeforeFill = true;
             // 
-            // lbStatus
+            // errorProvider1
             // 
-            this.lbStatus.Location = new System.Drawing.Point(0, 337);
-            this.lbStatus.Name = "lbStatus";
-            this.lbStatus.Size = new System.Drawing.Size(608, 22);
-            this.lbStatus.TabIndex = 21;
-            this.lbStatus.Text = "statusStrip1";
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmSinhVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 359);
+            this.Controls.Add(this.cblop);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.dataGridViewSinhVien);
             this.Controls.Add(this.txtTK);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnTK);
+            this.Controls.Add(this.btnThoat);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.rdDiachi);
             this.Controls.Add(this.txtdantoc);
-            this.Controls.Add(this.cblop);
             this.Controls.Add(this.dtNgaySinh);
             this.Controls.Add(this.rdNu);
             this.Controls.Add(this.rdNam);
@@ -294,10 +312,13 @@
             this.Name = "frmSinhVien";
             this.Text = "frSinhVien";
             this.Load += new System.EventHandler(this.frmSinhVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).EndInit();
+            this.lbStatus.ResumeLayout(false);
+            this.lbStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,20 +336,25 @@
         private System.Windows.Forms.RadioButton rdNam;
         private System.Windows.Forms.RadioButton rdNu;
         private System.Windows.Forms.DateTimePicker dtNgaySinh;
-        private System.Windows.Forms.ComboBox cblop;
         private System.Windows.Forms.TextBox txtdantoc;
         private System.Windows.Forms.RichTextBox rdDiachi;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnTK;
         private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.DataGridView dataGridViewSinhVien;
         private System.Windows.Forms.BindingSource quanLyDiemDataSetBindingSource;
+        //private QuanLyDiemDataSet quanLyDiemDataSet;
+        //private System.Windows.Forms.BindingSource lopBindingSource;
+        //private QuanLyDiemDataSetTableAdapters.LopTableAdapter lopTableAdapter;
+        private System.Windows.Forms.StatusStrip lbStatus;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ComboBox cblop;
         private QuanLyDiemDataSet quanLyDiemDataSet;
         private System.Windows.Forms.BindingSource lopBindingSource;
         private QuanLyDiemDataSetTableAdapters.LopTableAdapter lopTableAdapter;
-        private System.Windows.Forms.StatusStrip lbStatus;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
