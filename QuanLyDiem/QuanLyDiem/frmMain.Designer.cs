@@ -37,6 +37,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.xửLíDữLiệuLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,14 +64,15 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // xửLýDữLiệuToolStripMenuItem
             // 
             this.xửLýDữLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xửLíDữLiệuSinhViênToolStripMenuItem});
+            this.xửLíDữLiệuSinhViênToolStripMenuItem,
+            this.xửLíDữLiệuLớpToolStripMenuItem});
             this.xửLýDữLiệuToolStripMenuItem.Name = "xửLýDữLiệuToolStripMenuItem";
             this.xửLýDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.xửLýDữLiệuToolStripMenuItem.Text = "Xử lý dữ liệu";
@@ -108,6 +110,13 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // xửLíDữLiệuLớpToolStripMenuItem
+            // 
+            this.xửLíDữLiệuLớpToolStripMenuItem.Name = "xửLíDữLiệuLớpToolStripMenuItem";
+            this.xửLíDữLiệuLớpToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.xửLíDữLiệuLớpToolStripMenuItem.Text = "Xử lí dữ liệu Lớp";
+            this.xửLíDữLiệuLớpToolStripMenuItem.Click += new System.EventHandler(this.xửLíDữLiệuLớpToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,6 +148,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem xửLíDữLiệuLớpToolStripMenuItem;
     }
 }
 

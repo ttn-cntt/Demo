@@ -134,5 +134,24 @@ namespace QuanLyDiem.Entity
             }
             return info;
         }
+        //Lấy thông tin lớp
+        public DataTable GetLop()
+        {
+            DataTable info = null;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();//command:lấy ,xóa dữ liệu...
+                //chổ này nói lên rằng lệnh là lệnh gì?
+                command.CommandText = "GetLop";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                info = new DataTable();
+                sqlDataAdapter.Fill(info);//đôe dữ liệu vào
+            }
+            return info;
+        }
     }
 }

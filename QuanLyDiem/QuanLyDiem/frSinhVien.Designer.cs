@@ -52,21 +52,21 @@
             this.lbStatus = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.cblop = new System.Windows.Forms.ComboBox();
+            this.lopBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyDiemDataSet1 = new QuanLyDiem.QuanLyDiemDataSet1();
             this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
             this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSetTableAdapters.LopTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.quanLyDiemDataSet1 = new QuanLyDiem.QuanLyDiemDataSet1();
-            this.lopBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lopTableAdapter1 = new QuanLyDiem.QuanLyDiemDataSet1TableAdapters.LopTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).BeginInit();
             this.lbStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -181,9 +181,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(428, 34);
+            this.btnThem.Location = new System.Drawing.Point(428, 46);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.Size = new System.Drawing.Size(64, 23);
             this.btnThem.TabIndex = 14;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -191,9 +191,9 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(521, 34);
+            this.btnSua.Location = new System.Drawing.Point(510, 46);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(75, 23);
+            this.btnSua.Size = new System.Drawing.Size(59, 23);
             this.btnSua.TabIndex = 15;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -201,9 +201,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(428, 83);
+            this.btnXoa.Location = new System.Drawing.Point(428, 89);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(64, 23);
             this.btnXoa.TabIndex = 16;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -211,9 +211,9 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(521, 78);
+            this.btnThoat.Location = new System.Drawing.Point(510, 88);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.Size = new System.Drawing.Size(59, 23);
             this.btnThoat.TabIndex = 17;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -272,6 +272,16 @@
             this.cblop.TabIndex = 23;
             this.cblop.ValueMember = "MaLop";
             // 
+            // lopBindingSource1
+            // 
+            this.lopBindingSource1.DataMember = "Lop";
+            this.lopBindingSource1.DataSource = this.quanLyDiemDataSet1;
+            // 
+            // quanLyDiemDataSet1
+            // 
+            this.quanLyDiemDataSet1.DataSetName = "QuanLyDiemDataSet1";
+            this.quanLyDiemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // lopBindingSource
             // 
             this.lopBindingSource.DataMember = "Lop";
@@ -289,16 +299,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // quanLyDiemDataSet1
-            // 
-            this.quanLyDiemDataSet1.DataSetName = "QuanLyDiemDataSet1";
-            this.quanLyDiemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lopBindingSource1
-            // 
-            this.lopBindingSource1.DataMember = "Lop";
-            this.lopBindingSource1.DataSource = this.quanLyDiemDataSet1;
             // 
             // lopTableAdapter1
             // 
@@ -337,11 +337,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).EndInit();
             this.lbStatus.ResumeLayout(false);
             this.lbStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

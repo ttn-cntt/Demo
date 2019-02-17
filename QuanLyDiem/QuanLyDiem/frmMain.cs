@@ -27,5 +27,11 @@ namespace QuanLyDiem
             frmSinhVien sv = new frmSinhVien();
             sv.ShowDialog();
         }
+
+        private void xửLíDữLiệuLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLop l = new frmLop();
+            l.ShowDialog();
+        }
     }
 }
