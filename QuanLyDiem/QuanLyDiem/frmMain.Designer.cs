@@ -34,10 +34,10 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xửLýDữLiệuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xửLíDữLiệuSinhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xửLíDữLiệuLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.xửLíDữLiệuLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +84,13 @@
             this.xửLíDữLiệuSinhViênToolStripMenuItem.Text = "Xử lí dữ liệu sinh viên";
             this.xửLíDữLiệuSinhViênToolStripMenuItem.Click += new System.EventHandler(this.xửLíDữLiệuSinhViênToolStripMenuItem_Click);
             // 
+            // xửLíDữLiệuLớpToolStripMenuItem
+            // 
+            this.xửLíDữLiệuLớpToolStripMenuItem.Name = "xửLíDữLiệuLớpToolStripMenuItem";
+            this.xửLíDữLiệuLớpToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.xửLíDữLiệuLớpToolStripMenuItem.Text = "Xử lí dữ liệu Lớp";
+            this.xửLíDữLiệuLớpToolStripMenuItem.Click += new System.EventHandler(this.xửLíDữLiệuLớpToolStripMenuItem_Click);
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -94,7 +101,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Green;
-            this.label1.Location = new System.Drawing.Point(73, 41);
+            this.label1.Location = new System.Drawing.Point(74, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 25);
             this.label1.TabIndex = 2;
@@ -103,19 +110,12 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QuanLyDiem.Properties.Resources._49124993_280920556111885_4415955966382571520_n;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 79);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(385, 206);
+            this.pictureBox1.Size = new System.Drawing.Size(385, 216);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // xửLíDữLiệuLớpToolStripMenuItem
-            // 
-            this.xửLíDữLiệuLớpToolStripMenuItem.Name = "xửLíDữLiệuLớpToolStripMenuItem";
-            this.xửLíDữLiệuLớpToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.xửLíDữLiệuLớpToolStripMenuItem.Text = "Xử lí dữ liệu Lớp";
-            this.xửLíDữLiệuLớpToolStripMenuItem.Click += new System.EventHandler(this.xửLíDữLiệuLớpToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -128,8 +128,10 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hệ thống quản lý điểm theo tín chỉ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

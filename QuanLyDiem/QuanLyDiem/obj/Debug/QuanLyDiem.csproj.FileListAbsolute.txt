@@ -47,3 +47,5 @@ C:\Users\DELL\Desktop\FormLop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.fr
 C:\Users\DELL\Desktop\FormLop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmSinhVien.resources
 C:\Users\DELL\Desktop\FormLop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.Properties.Resources.resources
 C:\Users\DELL\Desktop\FormLop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.GenerateResource.Cache
+C:\Users\DELL\Desktop\New folder\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmLogin.resources
+C:\Users\DELL\Desktop\New folder\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmLop.resources

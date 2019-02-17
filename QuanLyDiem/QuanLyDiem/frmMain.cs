@@ -33,5 +33,11 @@ namespace QuanLyDiem
             frmLop l = new frmLop();
             l.ShowDialog();
         }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+        }
     }
 }
