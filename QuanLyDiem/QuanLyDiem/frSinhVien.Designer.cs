@@ -56,12 +56,17 @@
             this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
             this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSetTableAdapters.LopTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.quanLyDiemDataSet1 = new QuanLyDiem.QuanLyDiemDataSet1();
+            this.lopBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lopTableAdapter1 = new QuanLyDiem.QuanLyDiemDataSet1TableAdapters.LopTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).BeginInit();
             this.lbStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -202,6 +207,7 @@
             this.btnXoa.TabIndex = 16;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThoat
             // 
@@ -221,6 +227,7 @@
             this.btnTK.TabIndex = 18;
             this.btnTK.Text = "Tìm Kiếm";
             this.btnTK.UseVisualStyleBackColor = true;
+            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
             // txtTK
             // 
@@ -256,7 +263,7 @@
             // 
             // cblop
             // 
-            this.cblop.DataSource = this.lopBindingSource;
+            this.cblop.DataSource = this.lopBindingSource1;
             this.cblop.DisplayMember = "TenLop";
             this.cblop.FormattingEnabled = true;
             this.cblop.Location = new System.Drawing.Point(281, 21);
@@ -282,6 +289,20 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // quanLyDiemDataSet1
+            // 
+            this.quanLyDiemDataSet1.DataSetName = "QuanLyDiemDataSet1";
+            this.quanLyDiemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lopBindingSource1
+            // 
+            this.lopBindingSource1.DataMember = "Lop";
+            this.lopBindingSource1.DataSource = this.quanLyDiemDataSet1;
+            // 
+            // lopTableAdapter1
+            // 
+            this.lopTableAdapter1.ClearBeforeFill = true;
             // 
             // frmSinhVien
             // 
@@ -319,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,5 +379,8 @@
         private System.Windows.Forms.BindingSource lopBindingSource;
         private QuanLyDiemDataSetTableAdapters.LopTableAdapter lopTableAdapter;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private QuanLyDiemDataSet1 quanLyDiemDataSet1;
+        private System.Windows.Forms.BindingSource lopBindingSource1;
+        private QuanLyDiemDataSet1TableAdapters.LopTableAdapter lopTableAdapter1;
     }
 }

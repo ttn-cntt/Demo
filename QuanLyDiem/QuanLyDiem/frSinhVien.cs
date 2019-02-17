@@ -20,12 +20,14 @@ namespace QuanLyDiem
 
         private void frmSinhVien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyDiemDataSet.Lop' table. You can move, or remove it, as needed.
-            this.lopTableAdapter.Fill(this.quanLyDiemDataSet.Lop);
-           
+            // TODO: This line of code loads data into the 'quanLyDiemDataSet1.Lop' table. You can move, or remove it, as needed.
+            this.lopTableAdapter1.Fill(this.quanLyDiemDataSet1.Lop);
+            //// TODO: This line of code loads data into the 'quanLyDiemDataSet.Lop' table. You can move, or remove it, as needed.
+            //this.lopTableAdapter.Fill(this.quanLyDiemDataSet.Lop);
+
             LoadData();
         }
-             private void LoadData()
+        private void LoadData()
         {
             Connection connection = new Connection();
             dataGridViewSinhVien.DataSource = connection.GetStudentInfo();
@@ -62,17 +64,17 @@ namespace QuanLyDiem
         {
             if (txtTensv.Text == "")
             {
-                errorProvider1.SetError(txtTensv,"Tên sinh viên không được để trống");
+                errorProvider1.SetError(txtTensv, "Tên sinh viên không được để trống");
                 return;
             }
             if (txtdantoc.Text == "")
             {
-                errorProvider1.SetError(txtdantoc,"Dân tộc không được đê trống");
+                errorProvider1.SetError(txtdantoc, "Dân tộc không được đê trống");
                 return;
             }
             if (rdDiachi.Text == "")
             {
-                errorProvider1.SetError(rdDiachi,"Quê quán không được để trống");
+                errorProvider1.SetError(rdDiachi, "Quê quán không được để trống");
                 return;
             }
 
@@ -146,21 +148,21 @@ namespace QuanLyDiem
         {
             if (txtTensv.Text == "")
             {
-                errorProvider1.SetError(txtTensv,"Tên sinh viên không được để trống");
+                errorProvider1.SetError(txtTensv, "Tên sinh viên không được để trống");
                 return;
             }
             if (txtdantoc.Text == "")
             {
-                errorProvider1.SetError(txtdantoc,"Dân tộc không được để trống");
+                errorProvider1.SetError(txtdantoc, "Dân tộc không được để trống");
                 return;
             }
             if (rdDiachi.Text == "")
             {
-                errorProvider1.SetError(rdDiachi,"Địa chỉ không được để trống");
+                errorProvider1.SetError(rdDiachi, "Địa chỉ không được để trống");
                 return;
             }
 
-          
+
             SinhVien sv = new SinhVien();
             sv.TenSV = txtTensv.Text;
             sv.GioiTinh = rdNam.Checked;
@@ -170,7 +172,7 @@ namespace QuanLyDiem
             sv.Diachi = rdDiachi.Text;
 
             Connection con = new Connection();
-            bool isUpdate = con.UpdateStudent(sv,id);
+            bool isUpdate = con.UpdateStudent(sv, id);
             if (isUpdate == true)
             {
                 Clear();
@@ -183,6 +185,34 @@ namespace QuanLyDiem
             }
         }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (id < 0)
+            {
+                return;
+            }
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa ?", "Nhắc nhở", MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Connection con = new Connection();
+                bool IsDelete = con.DeleteStudent(id);
+                if (IsDelete == true)
+                {
+                    Clear();
+                    LoadData();
+                    MessageBox.Show("Xóa sinh viên thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Không xóa được");
+                }
+            }
+        }
 
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            Connection cn = new Connection();
+            dataGridViewSinhVien.DataSource = cn.Search(txtTK.Text.Trim());
+        }
     }
 }

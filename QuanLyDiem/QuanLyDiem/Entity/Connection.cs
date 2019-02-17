@@ -10,7 +10,7 @@ namespace QuanLyDiem.Entity
 {
     class Connection
     {
-        private static string ConnectionString = @"Data Source=Q3IQ7X3CNRGM2YY\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        private static string ConnectionString = @"Data Source=DESKTOP-M4FC1D7\SQLEXPRESS;Initial Catalog = QuanLyDiem; Integrated Security = True";
         private SqlConnection con;
 
         public Connection()
@@ -99,6 +99,40 @@ namespace QuanLyDiem.Entity
                     isUpdate = true;
             }
             return isUpdate;
+        }
+        public bool DeleteStudent(int masv)
+        {
+            bool isDelete = false;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "Deletestudent";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+                command.Parameters.AddWithValue("@masv", masv);
+                int i = command.ExecuteNonQuery();
+                if (i > 0)
+                    isDelete = true;
+            }
+            return isDelete;
+        }
+
+
+        public DataTable Search(string tensvm)
+        {
+            DataTable info = null;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "SearchStudent";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+                command.Parameters.AddWithValue("@tensv", tensvm);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                info = new DataTable();
+                sqlDataAdapter.Fill(info);
+            }
+            return info;
         }
     }
 }
