@@ -20,8 +20,10 @@ namespace QuanLyDiem
 
         private void frmSinhVien_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyDiemDataSet1.Lop' table. You can move, or remove it, as needed.
-            this.lopTableAdapter1.Fill(this.quanLyDiemDataSet1.Lop);
+            // TODO: This line of code loads data into the 'quanLyDiemDataSet2.Lop' table. You can move, or remove it, as needed.
+            this.lopTableAdapter2.Fill(this.quanLyDiemDataSet2.Lop);
+            //// TODO: This line of code loads data into the 'quanLyDiemDataSet1.Lop' table. You can move, or remove it, as needed.
+            //this.lopTableAdapter1.Fill(this.quanLyDiemDataSet1.Lop);
             //// TODO: This line of code loads data into the 'quanLyDiemDataSet.Lop' table. You can move, or remove it, as needed.
             //this.lopTableAdapter.Fill(this.quanLyDiemDataSet.Lop);
 

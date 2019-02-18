@@ -10,7 +10,7 @@ namespace QuanLyDiem.Entity
 {
     class Connection
     {
-        private static string ConnectionString = @"Data Source=DESKTOP-M4FC1D7\SQLEXPRESS;Initial Catalog = QuanLyDiem; Integrated Security = True";
+        private static String ConnectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
         private SqlConnection con;
 
         public Connection()
@@ -36,12 +36,67 @@ namespace QuanLyDiem.Entity
             return IsConnect;
         }
 
+       //Lấy thông tin lớp
+        public DataTable GetLop()
+        {
+            DataTable info = null;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();//command:lấy ,xóa dữ liệu...
+                //chổ này nói lên rằng lệnh là lệnh gì?
+                command.CommandText = "GetLop";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+
+
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                info = new DataTable();
+                sqlDataAdapter.Fill(info);//đôe dữ liệu vào
+            }
+            return info;
+        }
+        //Thêm lớp
+        public bool ThemLop(Class lop)
+        {
+            bool isInsertted = false;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "ThemLop";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+                //command.Parameters.AddWithValue("@name", st.maLop);
+                command.Parameters.AddWithValue("@tenlop", lop.tenLop);
+                
+                int i = command.ExecuteNonQuery();
+                if (i > 0)
+                    isInsertted = true;
+            }
+            return isInsertted;
+        }
+        public bool SuaLop(Class lop,int id)
+        {
+            bool isUpdate = false;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "SuaLop";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+                //command.Parameters.AddWithValue("@name", st.maLop);
+                command.Parameters.AddWithValue("@tenlop", lop.tenLop);
+                command.Parameters.AddWithValue("@id", id);
+                int i = command.ExecuteNonQuery();
+                if (i > 0)
+                    isUpdate = true;
+            }
+            return isUpdate;
+        }
         public DataTable GetStudentInfo()
         {
             DataTable info = null;
             if (IsConnected())
             {
-
                 SqlCommand command = new SqlCommand();
                 command.CommandText = "GetAllStudentInfo";
                 command.CommandType = CommandType.StoredProcedure;
@@ -77,9 +132,8 @@ namespace QuanLyDiem.Entity
             return isInserted;
         }
 
-        public bool UpdateStudent(SinhVien sv, int masv)
+        public bool UpdateStudent(SinhVien sv, int MaSV)
         {
-
             bool isUpdate = false;
             if (IsConnected())
             {
@@ -87,7 +141,7 @@ namespace QuanLyDiem.Entity
                 command.CommandText = "UpdateStudent";
                 command.CommandType = CommandType.StoredProcedure;
                 command.Connection = con;
-                command.Parameters.AddWithValue("@masv", masv);
+                command.Parameters.AddWithValue("@masv", MaSV);
                 command.Parameters.AddWithValue("@name", sv.TenSV);
                 command.Parameters.AddWithValue("@ngaysinh", sv.Ngaysinh);
                 command.Parameters.AddWithValue("@gioitinh", sv.GioiTinh);
@@ -100,6 +154,7 @@ namespace QuanLyDiem.Entity
             }
             return isUpdate;
         }
+
         public bool DeleteStudent(int masv)
         {
             bool isDelete = false;
@@ -116,6 +171,7 @@ namespace QuanLyDiem.Entity
             }
             return isDelete;
         }
+     
 
 
         public DataTable Search(string tensvm)
@@ -134,24 +190,6 @@ namespace QuanLyDiem.Entity
             }
             return info;
         }
-        //Lấy thông tin lớp
-        public DataTable GetLop()
-        {
-            DataTable info = null;
-            if (IsConnected())
-            {
-                SqlCommand command = new SqlCommand();//command:lấy ,xóa dữ liệu...
-                //chổ này nói lên rằng lệnh là lệnh gì?
-                command.CommandText = "GetLop";
-                command.CommandType = CommandType.StoredProcedure;
-                command.Connection = con;
-
-
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
-                info = new DataTable();
-                sqlDataAdapter.Fill(info);//đôe dữ liệu vào
-            }
-            return info;
-        }
+    
     }
 }

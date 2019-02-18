@@ -45,5 +45,71 @@ namespace QuanLyDiem
             txtTenLop.Text = "";
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (txtTenLop.Text == "")
+            {
+                //lỗi
+                errorProvider1.SetError(txtTenLop, "tên lớp không được để trống");
+                return;
+            }
+            Class l = new Class();
+            l.tenLop = txtTenLop.Text;
+            Connection con = new Connection();
+            bool IsInserted = con.ThemLop(l);
+            if (IsInserted == true)
+            {
+                //xóa dữ liệu ở các trường
+                Clear();
+                LoadData();
+                MessageBox.Show("Thêm lớp thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm lớp thất bại");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txtTenLop.Text == "")
+            {
+                //lỗi
+                errorProvider1.SetError(txtTenLop, "tên lớp không được để trống");
+                return;
+            }
+            Class l = new Class();
+            l.tenLop = txtTenLop.Text;
+            Connection con = new Connection();
+            bool isUpdate = con.SuaLop(l, id);
+            if (isUpdate == true)
+            {
+                //xóa dữ liệu ở các trường
+                Clear();
+                LoadData();
+                MessageBox.Show("Sửa lớp thành công");
+            }
+            else
+            {
+                MessageBox.Show("Sửa lớp thất bại");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmMain main = new frmMain();
+            main.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

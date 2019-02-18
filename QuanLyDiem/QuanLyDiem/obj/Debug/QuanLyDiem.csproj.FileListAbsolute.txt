@@ -49,3 +49,15 @@ C:\Users\DELL\Desktop\FormLop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.Pr
 C:\Users\DELL\Desktop\FormLop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.GenerateResource.Cache
 C:\Users\DELL\Desktop\New folder\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmLogin.resources
 C:\Users\DELL\Desktop\New folder\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmLop.resources
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.exe.config
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.exe
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.pdb
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csprojResolveAssemblyReference.cache
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmLogin.resources
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmLop.resources
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmMain.resources
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmSinhVien.resources
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.Properties.Resources.resources
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.GenerateResource.Cache
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.exe
+C:\Users\Trinh Huong\Desktop\Lop\Demo\QuanLyDiem\QuanLyDiem\bin\Debug\QuanLyDiem.pdb

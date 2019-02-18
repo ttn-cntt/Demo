@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDiemDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyDiemDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +147,17 @@
     </None>
     <None Include="QuanLyDiemDataSet1.xss">
       <DependentUpon>QuanLyDiemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet2.xsc">
+      <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyDiemDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyDiemDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyDiemDataSet2.xss">
+      <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Resources\12524219_746767982127017_8416118649959252206_n.jpg" />
   </ItemGroup>
