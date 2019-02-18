@@ -10,7 +10,7 @@ namespace QuanLyDiem.Entity
 {
     class Connection
     {
-        private static String ConnectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        private static String ConnectionString = @"Data Source=DESKTOP-1GUAO2R\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
         private SqlConnection con;
 
         public Connection()
@@ -92,6 +92,42 @@ namespace QuanLyDiem.Entity
             }
             return isUpdate;
         }
+        public bool XoaLop(int id)
+        {
+            bool isDelete = false;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "XoaLop";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+                command.Parameters.AddWithValue("@id", id);
+
+                int i = command.ExecuteNonQuery();
+                if (i > 0)
+                    isDelete = true;
+            }
+            return isDelete;
+
+        }
+        public DataTable TimLop(string tenlop)
+        {
+            DataTable info = null;
+            if (IsConnected())
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "TimLop";
+                command.CommandType = CommandType.StoredProcedure;
+                command.Connection = con;
+                command.Parameters.AddWithValue("@tenlop", tenlop);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(command);
+                info = new DataTable();
+                sqlDataAdapter.Fill(info);
+            }
+            return info;
+        }
+
+        //Lấy thông tin sinh viên
         public DataTable GetStudentInfo()
         {
             DataTable info = null;

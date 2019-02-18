@@ -109,7 +109,8 @@ namespace QuanLyDiem
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            Connection cn = new Connection();
+            dataLop.DataSource = cn.Search(textBox3.Text.Trim());
         }
     }
 }
