@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,9 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="data\QLD.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLD.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Class.cs" />
     <Compile Include="Entity\Connection.cs" />
     <Compile Include="Entity\SinhVien.cs" />
+    <Compile Include="frmdiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmdiem.Designer.cs">
+      <DependentUpon>frmdiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
     </Compile>
+    <None Include="data\QLD.dbml.layout">
+      <DependentUpon>QLD.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="frmdiem.resx">
+      <DependentUpon>frmdiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +130,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="data\QLD.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLD.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -175,6 +198,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\images1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

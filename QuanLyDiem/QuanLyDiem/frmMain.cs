@@ -39,5 +39,11 @@ namespace QuanLyDiem
             frmLogin frm = new frmLogin();
             frm.ShowDialog();
         }
+
+        private void xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmdiem d = new frmdiem();
+            d.ShowDialog();
+        }
     }
 }

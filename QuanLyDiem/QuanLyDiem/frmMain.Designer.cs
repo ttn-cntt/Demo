@@ -38,6 +38,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +73,8 @@
             // 
             this.xửLýDữLiệuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.xửLíDữLiệuSinhViênToolStripMenuItem,
-            this.xửLíDữLiệuLớpToolStripMenuItem});
+            this.xửLíDữLiệuLớpToolStripMenuItem,
+            this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem});
             this.xửLýDữLiệuToolStripMenuItem.Name = "xửLýDữLiệuToolStripMenuItem";
             this.xửLýDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.xửLýDữLiệuToolStripMenuItem.Text = "Xử lý dữ liệu";
@@ -80,14 +82,14 @@
             // xửLíDữLiệuSinhViênToolStripMenuItem
             // 
             this.xửLíDữLiệuSinhViênToolStripMenuItem.Name = "xửLíDữLiệuSinhViênToolStripMenuItem";
-            this.xửLíDữLiệuSinhViênToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.xửLíDữLiệuSinhViênToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.xửLíDữLiệuSinhViênToolStripMenuItem.Text = "Xử lí dữ liệu sinh viên";
             this.xửLíDữLiệuSinhViênToolStripMenuItem.Click += new System.EventHandler(this.xửLíDữLiệuSinhViênToolStripMenuItem_Click);
             // 
             // xửLíDữLiệuLớpToolStripMenuItem
             // 
             this.xửLíDữLiệuLớpToolStripMenuItem.Name = "xửLíDữLiệuLớpToolStripMenuItem";
-            this.xửLíDữLiệuLớpToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.xửLíDữLiệuLớpToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
             this.xửLíDữLiệuLớpToolStripMenuItem.Text = "Xử lí dữ liệu Lớp";
             this.xửLíDữLiệuLớpToolStripMenuItem.Click += new System.EventHandler(this.xửLíDữLiệuLớpToolStripMenuItem_Click);
             // 
@@ -116,6 +118,13 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            // 
+            // xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem
+            // 
+            this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem.Name = "xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem";
+            this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem.Size = new System.Drawing.Size(270, 22);
+            this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem.Text = "Xử lý dữ liệu học kỳ , môn học , điểm";
+            this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem.Click += new System.EventHandler(this.xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -151,6 +160,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem xửLíDữLiệuLớpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xửLýDữLiệuHọcKỳMônHọcĐiểmToolStripMenuItem;
     }
 }
 

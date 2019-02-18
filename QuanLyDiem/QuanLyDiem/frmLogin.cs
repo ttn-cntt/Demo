@@ -30,7 +30,8 @@ namespace QuanLyDiem
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            SqlConnection conn =new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True");
+            //SqlConnection conn =new SqlConnection(@"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=Q3IQ7X3CNRGM2YY\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True");
             try
             {
                 conn.Open();

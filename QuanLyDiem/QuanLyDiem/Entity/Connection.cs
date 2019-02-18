@@ -10,7 +10,8 @@ namespace QuanLyDiem.Entity
 {
     class Connection
     {
-        private static String ConnectionString = @"Data Source=DESKTOP-1GUAO2R\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        //private static String ConnectionString = @"Data Source=DESKTOP-1GUAO2R\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        private static String ConnectionString = @"Data Source=Q3IQ7X3CNRGM2YY\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
         private SqlConnection con;
 
         public Connection()
