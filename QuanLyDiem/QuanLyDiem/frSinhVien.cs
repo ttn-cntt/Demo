@@ -50,8 +50,8 @@ namespace QuanLyDiem
             dtNgaySinh.Text = dataGridViewSinhVien.Rows[e.RowIndex].Cells[2].Value.ToString();
             rdNam.Checked = bool.Parse(dataGridViewSinhVien.Rows[e.RowIndex].Cells[3].Value.ToString());
             rdNu.Checked = !rdNam.Checked;
-            rdDiachi.Text = dataGridViewSinhVien.Rows[e.RowIndex].Cells[4].Value.ToString();
-            txtdantoc.Text = dataGridViewSinhVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+            rdDiachi.Text = dataGridViewSinhVien.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtdantoc.Text = dataGridViewSinhVien.Rows[e.RowIndex].Cells[4].Value.ToString();
             cblop.Text = dataGridViewSinhVien.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 

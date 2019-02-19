@@ -45,7 +45,7 @@
             this.txttenmon = new System.Windows.Forms.TextBox();
             this.txtsoTC = new System.Windows.Forms.TextBox();
             this.btnthemhk = new System.Windows.Forms.Button();
-            this.btnsuahk = new System.Windows.Forms.Button();
+            this.btnluuhk = new System.Windows.Forms.Button();
             this.btnxoamon = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btncapnhat = new System.Windows.Forms.Button();
@@ -64,8 +64,10 @@
             this.diemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.diemTableAdapter = new QuanLyDiem.QuanLyDiemDataSetTableAdapters.DiemTableAdapter();
             this.btnxoahk = new System.Windows.Forms.Button();
-            this.btnsuamon = new System.Windows.Forms.Button();
+            this.btnluumon = new System.Windows.Forms.Button();
             this.btnthemmon = new System.Windows.Forms.Button();
+            this.txtmahk = new System.Windows.Forms.TextBox();
+            this.lbmahk = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource1)).BeginInit();
@@ -116,7 +118,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(323, 35);
+            this.label6.Location = new System.Drawing.Point(470, 35);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 5;
@@ -175,9 +177,9 @@
             // 
             // txttenhk
             // 
-            this.txttenhk.Location = new System.Drawing.Point(405, 33);
+            this.txttenhk.Location = new System.Drawing.Point(537, 33);
             this.txttenhk.Name = "txttenhk";
-            this.txttenhk.Size = new System.Drawing.Size(122, 20);
+            this.txttenhk.Size = new System.Drawing.Size(70, 20);
             this.txttenhk.TabIndex = 13;
             // 
             // txtmamon
@@ -211,14 +213,15 @@
             this.btnthemhk.UseVisualStyleBackColor = true;
             this.btnthemhk.Click += new System.EventHandler(this.btnthemhk_Click);
             // 
-            // btnsuahk
+            // btnluuhk
             // 
-            this.btnsuahk.Location = new System.Drawing.Point(713, 28);
-            this.btnsuahk.Name = "btnsuahk";
-            this.btnsuahk.Size = new System.Drawing.Size(75, 23);
-            this.btnsuahk.TabIndex = 18;
-            this.btnsuahk.Text = "Sửa";
-            this.btnsuahk.UseVisualStyleBackColor = true;
+            this.btnluuhk.Location = new System.Drawing.Point(713, 28);
+            this.btnluuhk.Name = "btnluuhk";
+            this.btnluuhk.Size = new System.Drawing.Size(75, 23);
+            this.btnluuhk.TabIndex = 18;
+            this.btnluuhk.Text = "Lưu lại";
+            this.btnluuhk.UseVisualStyleBackColor = true;
+            this.btnluuhk.Click += new System.EventHandler(this.btnsuahk_Click);
             // 
             // btnxoamon
             // 
@@ -343,21 +346,22 @@
             // 
             // btnxoahk
             // 
-            this.btnxoahk.Location = new System.Drawing.Point(794, 25);
+            this.btnxoahk.Location = new System.Drawing.Point(794, 30);
             this.btnxoahk.Name = "btnxoahk";
             this.btnxoahk.Size = new System.Drawing.Size(75, 23);
             this.btnxoahk.TabIndex = 25;
             this.btnxoahk.Text = "Xóa";
             this.btnxoahk.UseVisualStyleBackColor = true;
+            this.btnxoahk.Click += new System.EventHandler(this.btnxoahk_Click);
             // 
-            // btnsuamon
+            // btnluumon
             // 
-            this.btnsuamon.Location = new System.Drawing.Point(713, 65);
-            this.btnsuamon.Name = "btnsuamon";
-            this.btnsuamon.Size = new System.Drawing.Size(75, 23);
-            this.btnsuamon.TabIndex = 26;
-            this.btnsuamon.Text = "Sửa";
-            this.btnsuamon.UseVisualStyleBackColor = true;
+            this.btnluumon.Location = new System.Drawing.Point(713, 65);
+            this.btnluumon.Name = "btnluumon";
+            this.btnluumon.Size = new System.Drawing.Size(75, 23);
+            this.btnluumon.TabIndex = 26;
+            this.btnluumon.Text = "Lưu lại";
+            this.btnluumon.UseVisualStyleBackColor = true;
             // 
             // btnthemmon
             // 
@@ -368,13 +372,31 @@
             this.btnthemmon.Text = "Thêm";
             this.btnthemmon.UseVisualStyleBackColor = true;
             // 
+            // txtmahk
+            // 
+            this.txtmahk.Location = new System.Drawing.Point(373, 33);
+            this.txtmahk.Name = "txtmahk";
+            this.txtmahk.Size = new System.Drawing.Size(82, 20);
+            this.txtmahk.TabIndex = 28;
+            // 
+            // lbmahk
+            // 
+            this.lbmahk.AutoSize = true;
+            this.lbmahk.Location = new System.Drawing.Point(315, 35);
+            this.lbmahk.Name = "lbmahk";
+            this.lbmahk.Size = new System.Drawing.Size(57, 13);
+            this.lbmahk.TabIndex = 29;
+            this.lbmahk.Text = "Mã học kỳ";
+            // 
             // frmdiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 360);
+            this.ClientSize = new System.Drawing.Size(903, 360);
+            this.Controls.Add(this.lbmahk);
+            this.Controls.Add(this.txtmahk);
             this.Controls.Add(this.btnthemmon);
-            this.Controls.Add(this.btnsuamon);
+            this.Controls.Add(this.btnluumon);
             this.Controls.Add(this.btnxoahk);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTK);
@@ -382,7 +404,7 @@
             this.Controls.Add(this.btncapnhat);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnxoamon);
-            this.Controls.Add(this.btnsuahk);
+            this.Controls.Add(this.btnluuhk);
             this.Controls.Add(this.btnthemhk);
             this.Controls.Add(this.txtsoTC);
             this.Controls.Add(this.txttenmon);
@@ -441,7 +463,7 @@
         private System.Windows.Forms.TextBox txttenmon;
         private System.Windows.Forms.TextBox txtsoTC;
         private System.Windows.Forms.Button btnthemhk;
-        private System.Windows.Forms.Button btnsuahk;
+        private System.Windows.Forms.Button btnluuhk;
         private System.Windows.Forms.Button btnxoamon;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btncapnhat;
@@ -460,7 +482,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn diemHS2DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource diemBindingSource1;
         private System.Windows.Forms.Button btnxoahk;
-        private System.Windows.Forms.Button btnsuamon;
+        private System.Windows.Forms.Button btnluumon;
         private System.Windows.Forms.Button btnthemmon;
+        private System.Windows.Forms.TextBox txtmahk;
+        private System.Windows.Forms.Label lbmahk;
     }
 }

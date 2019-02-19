@@ -26,8 +26,8 @@ namespace QuanLyDiem
             cbhocky.DataSource = dt.HocKyAll();
             cbhocky.ValueMember = "MaHK";
             cbhocky.DisplayMember = "TenHK";
-            //txtmahk.DataBindings.Clear();
-            //txtmahk.DataBindings.Add("Text",cbhocky.DataSource,"MaHK");
+            txtmahk.DataBindings.Clear();
+            txtmahk.DataBindings.Add("Text", cbhocky.DataSource, "MaHK");
             txttenhk.DataBindings.Clear();
             txttenhk.DataBindings.Add("Text", cbhocky.DataSource, "TenHK");
         }
@@ -35,18 +35,43 @@ namespace QuanLyDiem
 
         private void btnthemhk_Click(object sender, EventArgs e)
         {
-            txttenmon.Text = "";
+            txtmahk.Text = "";
+            txttenhk.Text = "";
+            txtmahk.Enabled = true;
+            txtmahk.Focus();
             adhk = true;
+           
+        }
 
+        private void btnsuahk_Click(object sender, EventArgs e)
+        {
             if (adhk)
             {
-                dt.InsertHK(txttenhk.Text);
+                dt.InsertHK1(txtmahk.Text,txttenhk.Text);
+                txtmahk.Enabled = false;
                 adhk = false;
-                MessageBox.Show("Thêm thành công");
+                frmdiem_Load(sender,e);
+                
             }
             else
             {
-                MessageBox.Show("Không thêm được");
+                dt.UpdateHK(txtmahk.Text,txttenhk.Text);
+                frmdiem_Load(sender, e);
+            }
+        }
+
+        private void btnxoahk_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn chắc chắn muốn xóa ?", "Nhắc nhở", MessageBoxButtons.OKCancel,
+           MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                dt.DeleteHK(txtmahk.Text);
+                frmdiem_Load(sender, e);
+                MessageBox.Show("Xóa thành công");
+            }
+            else
+            {
+                MessageBox.Show("Không xóa được");
             }
         }
     }

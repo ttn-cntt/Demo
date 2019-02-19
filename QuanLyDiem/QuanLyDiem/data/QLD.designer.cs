@@ -62,6 +62,13 @@ namespace QuanLyDiem.data
 			OnCreated();
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LopAll")]
+		public ISingleResult<LopAllResult> LopAll()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<LopAllResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.HocKyAll")]
 		public ISingleResult<HocKyAllResult> HocKyAll()
 		{
@@ -70,61 +77,30 @@ namespace QuanLyDiem.data
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertHK")]
-		public int InsertHK([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenhk)
+		public void InsertHK([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenhk)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenhk);
+			this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenhk);
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteHK")]
+		public int DeleteHK([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mahk)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahk);
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.LopAll")]
-		public ISingleResult<LopAllResult> LopAll()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateHK")]
+		public int UpdateHK([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mahk, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenhk)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<LopAllResult>)(result.ReturnValue));
-		}
-	}
-	
-	public partial class HocKyAllResult
-	{
-		
-		private int _MaHK;
-		
-		private string _TenHK;
-		
-		public HocKyAllResult()
-		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahk, tenhk);
+			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHK", DbType="Int NOT NULL")]
-		public int MaHK
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertHK")]
+		public int InsertHK1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mahk, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string tenhk)
 		{
-			get
-			{
-				return this._MaHK;
-			}
-			set
-			{
-				if ((this._MaHK != value))
-				{
-					this._MaHK = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHK", DbType="NVarChar(50)")]
-		public string TenHK
-		{
-			get
-			{
-				return this._TenHK;
-			}
-			set
-			{
-				if ((this._TenHK != value))
-				{
-					this._TenHK = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mahk, tenhk);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -167,6 +143,50 @@ namespace QuanLyDiem.data
 				if ((this._TenLop != value))
 				{
 					this._TenLop = value;
+				}
+			}
+		}
+	}
+	
+	public partial class HocKyAllResult
+	{
+		
+		private string _MaHK;
+		
+		private string _TenHK;
+		
+		public HocKyAllResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHK", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaHK
+		{
+			get
+			{
+				return this._MaHK;
+			}
+			set
+			{
+				if ((this._MaHK != value))
+				{
+					this._MaHK = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHK", DbType="NVarChar(50)")]
+		public string TenHK
+		{
+			get
+			{
+				return this._TenHK;
+			}
+			set
+			{
+				if ((this._TenHK != value))
+				{
+					this._TenHK = value;
 				}
 			}
 		}
