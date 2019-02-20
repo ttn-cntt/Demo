@@ -20,12 +20,12 @@ namespace QuanLyDiem
         QLDDataContext dt = new QLDDataContext();
         private void frmdiem_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyDiemDataSet2.Lop' table. You can move, or remove it, as needed.
-            this.lopTableAdapter.Fill(this.quanLyDiemDataSet2.Lop);
-            cbLop.DataSource = dt.LopAll1();
+            //// TODO: This line of code loads data into the 'quanLyDiemDataSet2.Lop' table. You can move, or remove it, as needed.
+            //this.lopTableAdapter.Fill(this.quanLyDiemDataSet2.Lop);
+            cbLop.DataSource = dt.LopAll();
             cbLop.DisplayMember = "TenLop";
             cbLop.ValueMember = "MaLop";
-            cbhocky.DataSource = dt.HocKyAll1();
+            cbhocky.DataSource = dt.HocKyAll();
             cbhocky.ValueMember = "MaHK";
             cbhocky.DisplayMember = "TenHK";
             txtmahk.DataBindings.Clear();
@@ -34,16 +34,16 @@ namespace QuanLyDiem
             txttenhk.DataBindings.Add("Text", cbhocky.DataSource, "TenHK");
 
             //môn học
-            cbmonhoc.DataSource = dt.GetMonHoc();
-            cbmonhoc.DisplayMember = "TenMon";
-            cbmonhoc.ValueMember = "MaMon";
+            //cbmonhoc.DataSource = dt.GetMonHoc();
+            //cbmonhoc.DisplayMember = "TenMon";
+            //cbmonhoc.ValueMember = "MaMon";
            
-            txtmamon.DataBindings.Clear();
-            txtmamon.DataBindings.Add("Text", cbmonhoc.DataSource, "MaMon");
-            txttenmon.DataBindings.Clear();
-            txttenmon.DataBindings.Add("Text", cbmonhoc.DataSource, "TenMon");
-            txtsoTC.DataBindings.Clear();
-            txtsoTC.DataBindings.Add("Text", cbmonhoc.DataSource, "SoTC");
+            //txtmamon.DataBindings.Clear();
+            //txtmamon.DataBindings.Add("Text", cbmonhoc.DataSource, "MaMon");
+            //txttenmon.DataBindings.Clear();
+            //txttenmon.DataBindings.Add("Text", cbmonhoc.DataSource, "TenMon");
+            //txtsoTC.DataBindings.Clear();
+            //txtsoTC.DataBindings.Add("Text", cbmonhoc.DataSource, "SoTC");
         }
         Boolean adhk = false;
 
@@ -61,7 +61,7 @@ namespace QuanLyDiem
         {
             if (adhk)
             {
-                dt.InsertHK2(txtmahk.Text,txttenhk.Text);
+                dt.InsertHK(txtmahk.Text,txttenhk.Text);
                 txtmahk.Enabled = false;
                 adhk = false;
                 frmdiem_Load(sender,e);
@@ -69,17 +69,31 @@ namespace QuanLyDiem
             }
             else
             {
-                dt.UpdateHK1(txtmahk.Text,txttenhk.Text);
+                dt.UpdateHK(txtmahk.Text,txttenhk.Text);
                 frmdiem_Load(sender, e);
             }
         }
+        private void cbhocky_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            cbmonhoc.DisplayMember = "TenMon";
+            cbmonhoc.ValueMember = "MaMon";
+            cbmonhoc.DataSource = dt.MonHPSelectMK(cbhocky.SelectedValue.ToString());
 
+            txtmamon.DataBindings.Clear();
+            txtmamon.DataBindings.Add("Text", cbmonhoc.DataSource, "MaMon");
+            txttenmon.DataBindings.Clear();
+            txttenmon.DataBindings.Add("Text", cbmonhoc.DataSource, "TenMon");
+            txtsoTC.DataBindings.Clear();
+            txtsoTC.DataBindings.Add("Text", cbmonhoc.DataSource, "SoTC");
+            txtmahk.Enabled = false;
+        }
         private void btnxoahk_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn chắc chắn muốn xóa ?", "Nhắc nhở", MessageBoxButtons.OKCancel,
            MessageBoxIcon.Question) == DialogResult.OK)
             {
-                dt.DeleteHK1(txtmahk.Text);
+                dt.DeleteHK(txtmahk.Text);
                 frmdiem_Load(sender, e);
                 MessageBox.Show("Xóa thành công");
             }
@@ -88,7 +102,7 @@ namespace QuanLyDiem
                 MessageBox.Show("Không xóa được");
             }
         }
-
+        Boolean adMon = false;
         private void btnthemmon_Click(object sender, EventArgs e)
         {
             txtmamon.Text = "";
@@ -96,7 +110,7 @@ namespace QuanLyDiem
             txtsoTC.Text = "";
             txtmamon.Enabled = true;
             txtmamon.Focus();
-            adhk = true;
+            adMon = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -107,22 +121,25 @@ namespace QuanLyDiem
 
         private void btnxoamon_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn xóa ?", "Nhắc nhở", MessageBoxButtons.OKCancel,
-          MessageBoxIcon.Question) == DialogResult.OK)
-            {
-                dt.XoaMonHoc(txtmamon.Text);
-                frmdiem_Load(sender, e);
-                MessageBox.Show("Xóa thành công");
-            }
-            else
-            {
-                MessageBox.Show("Không xóa được");
-            }
+            dt.XoaMonHoc(txtmamon.Text);
+            cbhocky_SelectedIndexChanged(sender, e);
         }
 
         private void btnluumon_Click(object sender, EventArgs e)
         {
-
+            if (adMon)
+            {
+                dt.ThemMonHoc(txtmamon.Text,txttenmon.Text,Convert.ToInt16(txtsoTC.Text),txtmahk.Text);
+                
+                adMon = false;
+               
+            }
+            else
+            {
+                dt.ThemMonHoc(txtmamon.Text,txttenmon.Text,Convert.ToInt16(txtsoTC.Text),txtmahk.Text);
+                cbhocky_SelectedIndexChanged(sender, e);
+            }
         }
+
     }
 }

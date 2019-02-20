@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyDiem" Class="QLDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-1GUAO2R\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True" SettingsObjectName="QuanLyDiem.Properties.Settings" SettingsPropertyName="QuanLyDiemConnectionString3" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.DeleteHK" Method="DeleteHK">
+    <Parameter Name="maHK" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetMonHoc" Method="GetMonHoc">
+    <ElementType Name="GetMonHocResult">
+      <Column Name="MaMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaHK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.HocKyAll" Method="HocKyAll">
+    <ElementType Name="HocKyAllResult">
+      <Column Name="MaHK" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenHK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertHK" Method="InsertHK">
+    <Parameter Name="maHK" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenHK" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.LopAll" Method="LopAll">
+    <ElementType Name="LopAllResult">
+      <Column Name="MaLop" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenLop" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateHK" Method="UpdateHK">
+    <Parameter Name="maHK" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenHK" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.XoaMonHoc" Method="XoaMonHoc">
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.MonHPSelectMK" Method="MonHPSelectMK">
+    <Parameter Name="maHK" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="MonHPSelectMKResult">
+      <Column Name="MaMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenMon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SoTC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaHK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SuaMonHoc" Method="SuaMonHoc">
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="soTC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="maHK" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ThemMonHoc" Method="ThemMonHoc">
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="tenMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="soTC" Type="System.Int32" DbType="Int" />
+    <Parameter Name="maHK" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

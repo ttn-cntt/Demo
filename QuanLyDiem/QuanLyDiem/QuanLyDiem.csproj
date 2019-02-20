@@ -87,6 +87,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLD.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLD.dbml</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyDiemDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -102,6 +107,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuanLyDiemDataSet2.xsd</DependentUpon>
     </Compile>
+    <None Include="QLD.dbml.layout">
+      <DependentUpon>QLD.dbml</DependentUpon>
+    </None>
     <None Include="data\QLD.dbml.layout">
       <DependentUpon>QLD.dbml</DependentUpon>
     </None>
@@ -149,6 +157,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLD.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QLD.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="QuanLyDiemDataSet.xsc">
       <DependentUpon>QuanLyDiemDataSet.xsd</DependentUpon>
     </None>

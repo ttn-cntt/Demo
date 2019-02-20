@@ -177,6 +177,7 @@
             this.cbhocky.Name = "cbhocky";
             this.cbhocky.Size = new System.Drawing.Size(72, 21);
             this.cbhocky.TabIndex = 11;
+            this.cbhocky.SelectedIndexChanged += new System.EventHandler(this.cbhocky_SelectedIndexChanged);
             // 
             // txttenhk
             // 
