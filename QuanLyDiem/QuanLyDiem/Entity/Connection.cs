@@ -11,7 +11,8 @@ namespace QuanLyDiem.Entity
     class Connection
     {
         //private static String ConnectionString = @"Data Source=DESKTOP-1GUAO2R\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
-        private static String ConnectionString = @"Data Source=Q3IQ7X3CNRGM2YY\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        //private static String ConnectionString = @"Data Source=Q3IQ7X3CNRGM2YY\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
+        private static String ConnectionString = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Security=True";
         private SqlConnection con;
 
         public Connection()
@@ -45,7 +46,7 @@ namespace QuanLyDiem.Entity
             {
                 SqlCommand command = new SqlCommand();//command:lấy ,xóa dữ liệu...
                 //chổ này nói lên rằng lệnh là lệnh gì?
-                command.CommandText = "GetLop";
+                command.CommandText = "LopAll";
                 command.CommandType = CommandType.StoredProcedure;
                 command.Connection = con;
 
@@ -93,7 +94,7 @@ namespace QuanLyDiem.Entity
             }
             return isUpdate;
         }
-        public bool XoaLop(int id)
+        public bool XoaLop(string id)
         {
             bool isDelete = false;
             if (IsConnected())

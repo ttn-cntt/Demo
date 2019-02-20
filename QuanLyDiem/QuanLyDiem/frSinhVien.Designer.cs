@@ -52,26 +52,30 @@
             this.lbStatus = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.cblop = new System.Windows.Forms.ComboBox();
+            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
             this.lopBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyDiemDataSet2 = new QuanLyDiem.QuanLyDiemDataSet2();
             this.lopBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyDiemDataSet1 = new QuanLyDiem.QuanLyDiemDataSet1();
-            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
             this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSetTableAdapters.LopTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lopTableAdapter1 = new QuanLyDiem.QuanLyDiemDataSet1TableAdapters.LopTableAdapter();
             this.lopTableAdapter2 = new QuanLyDiem.QuanLyDiemDataSet2TableAdapters.LopTableAdapter();
+            this.quanLyDiemDataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lopBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).BeginInit();
             this.lbStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet2BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -268,7 +272,7 @@
             // 
             // cblop
             // 
-            this.cblop.DataSource = this.lopBindingSource;
+            this.cblop.DataSource = this.lopBindingSource2;
             this.cblop.DisplayMember = "TenLop";
             this.cblop.FormattingEnabled = true;
             this.cblop.Location = new System.Drawing.Point(281, 21);
@@ -276,6 +280,16 @@
             this.cblop.Size = new System.Drawing.Size(121, 21);
             this.cblop.TabIndex = 23;
             this.cblop.ValueMember = "MaLop";
+            // 
+            // lopBindingSource
+            // 
+            this.lopBindingSource.DataMember = "Lop";
+            this.lopBindingSource.DataSource = this.quanLyDiemDataSet;
+            // 
+            // quanLyDiemDataSet
+            // 
+            this.quanLyDiemDataSet.DataSetName = "QuanLyDiemDataSet";
+            this.quanLyDiemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lopBindingSource2
             // 
@@ -297,16 +311,6 @@
             this.quanLyDiemDataSet1.DataSetName = "QuanLyDiemDataSet1";
             this.quanLyDiemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // lopBindingSource
-            // 
-            this.lopBindingSource.DataMember = "Lop";
-            this.lopBindingSource.DataSource = this.quanLyDiemDataSet;
-            // 
-            // quanLyDiemDataSet
-            // 
-            this.quanLyDiemDataSet.DataSetName = "QuanLyDiemDataSet";
-            this.quanLyDiemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lopTableAdapter
             // 
             this.lopTableAdapter.ClearBeforeFill = true;
@@ -322,6 +326,16 @@
             // lopTableAdapter2
             // 
             this.lopTableAdapter2.ClearBeforeFill = true;
+            // 
+            // quanLyDiemDataSet2BindingSource
+            // 
+            this.quanLyDiemDataSet2BindingSource.DataSource = this.quanLyDiemDataSet2;
+            this.quanLyDiemDataSet2BindingSource.Position = 0;
+            // 
+            // lopBindingSource3
+            // 
+            this.lopBindingSource3.DataMember = "Lop";
+            this.lopBindingSource3.DataSource = this.quanLyDiemDataSet2;
             // 
             // frmSinhVien
             // 
@@ -356,13 +370,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinhVien)).EndInit();
             this.lbStatus.ResumeLayout(false);
             this.lbStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet2BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +422,7 @@
         private QuanLyDiemDataSet2 quanLyDiemDataSet2;
         private System.Windows.Forms.BindingSource lopBindingSource2;
         private QuanLyDiemDataSet2TableAdapters.LopTableAdapter lopTableAdapter2;
+        private System.Windows.Forms.BindingSource quanLyDiemDataSet2BindingSource;
+        private System.Windows.Forms.BindingSource lopBindingSource3;
     }
 }

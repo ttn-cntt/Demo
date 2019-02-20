@@ -49,8 +49,6 @@
             this.btnxoamon = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btncapnhat = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.txtTK = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,12 +66,17 @@
             this.btnthemmon = new System.Windows.Forms.Button();
             this.txtmahk = new System.Windows.Forms.TextBox();
             this.lbmahk = new System.Windows.Forms.Label();
+            this.quanLyDiemDataSet2 = new QuanLyDiem.QuanLyDiemDataSet2();
+            this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSet2TableAdapters.LopTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -231,6 +234,7 @@
             this.btnxoamon.TabIndex = 19;
             this.btnxoamon.Text = "Xóa";
             this.btnxoamon.UseVisualStyleBackColor = true;
+            this.btnxoamon.Click += new System.EventHandler(this.btnxoamon_Click);
             // 
             // button4
             // 
@@ -240,6 +244,7 @@
             this.button4.TabIndex = 20;
             this.button4.Text = "Thoát";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btncapnhat
             // 
@@ -249,22 +254,6 @@
             this.btncapnhat.TabIndex = 21;
             this.btncapnhat.Text = "Cập nhật dữ liệu";
             this.btncapnhat.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(612, 121);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "Tìm kiếm";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // txtTK
-            // 
-            this.txtTK.Location = new System.Drawing.Point(268, 123);
-            this.txtTK.Name = "txtTK";
-            this.txtTK.Size = new System.Drawing.Size(295, 20);
-            this.txtTK.TabIndex = 23;
             // 
             // panel1
             // 
@@ -362,6 +351,7 @@
             this.btnluumon.TabIndex = 26;
             this.btnluumon.Text = "Lưu lại";
             this.btnluumon.UseVisualStyleBackColor = true;
+            this.btnluumon.Click += new System.EventHandler(this.btnluumon_Click);
             // 
             // btnthemmon
             // 
@@ -371,6 +361,7 @@
             this.btnthemmon.TabIndex = 27;
             this.btnthemmon.Text = "Thêm";
             this.btnthemmon.UseVisualStyleBackColor = true;
+            this.btnthemmon.Click += new System.EventHandler(this.btnthemmon_Click);
             // 
             // txtmahk
             // 
@@ -388,6 +379,20 @@
             this.lbmahk.TabIndex = 29;
             this.lbmahk.Text = "Mã học kỳ";
             // 
+            // quanLyDiemDataSet2
+            // 
+            this.quanLyDiemDataSet2.DataSetName = "QuanLyDiemDataSet2";
+            this.quanLyDiemDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lopBindingSource
+            // 
+            this.lopBindingSource.DataMember = "Lop";
+            this.lopBindingSource.DataSource = this.quanLyDiemDataSet2;
+            // 
+            // lopTableAdapter
+            // 
+            this.lopTableAdapter.ClearBeforeFill = true;
+            // 
             // frmdiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,8 +404,6 @@
             this.Controls.Add(this.btnluumon);
             this.Controls.Add(this.btnxoahk);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtTK);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.btncapnhat);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnxoamon);
@@ -430,6 +433,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lopBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,8 +472,6 @@
         private System.Windows.Forms.Button btnxoamon;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btncapnhat;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private QuanLyDiemDataSet quanLyDiemDataSet;
@@ -486,5 +489,8 @@
         private System.Windows.Forms.Button btnthemmon;
         private System.Windows.Forms.TextBox txtmahk;
         private System.Windows.Forms.Label lbmahk;
+        private QuanLyDiemDataSet2 quanLyDiemDataSet2;
+        private System.Windows.Forms.BindingSource lopBindingSource;
+        private QuanLyDiemDataSet2TableAdapters.LopTableAdapter lopTableAdapter;
     }
 }
