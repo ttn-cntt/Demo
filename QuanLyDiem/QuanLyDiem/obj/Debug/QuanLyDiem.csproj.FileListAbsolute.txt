@@ -154,3 +154,4 @@ C:\Users\pc\Desktop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmMain.reso
 C:\Users\pc\Desktop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmSinhVien.resources
 C:\Users\pc\Desktop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.Properties.Resources.resources
 C:\Users\pc\Desktop\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.csproj.GenerateResource.Cache
+C:\Users\pc\Desktop\New folder (2)\Demo\QuanLyDiem\QuanLyDiem\obj\Debug\QuanLyDiem.frmBangDiemCT.resources

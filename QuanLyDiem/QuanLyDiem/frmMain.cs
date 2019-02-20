@@ -45,5 +45,11 @@ namespace QuanLyDiem
             frmdiem d = new frmdiem();
             d.ShowDialog();
         }
+
+        private void bảngĐiểmChiTiếtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBangDiemCT d = new frmBangDiemCT();
+            d.ShowDialog();
+        }
     }
 }
