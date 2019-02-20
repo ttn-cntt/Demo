@@ -61,4 +61,53 @@
     <Parameter Name="maHK" Type="System.String" DbType="NVarChar(50)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.DiemHPInsert" Method="DiemHPInsert">
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSV" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DiemHPSearch" Method="DiemHPSearch">
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSV" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="DiemHPSearchResult">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MaMon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DiemHS1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemHS2" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SinhVienSelectAll" Method="SinhVienSelectAll">
+    <ElementType Name="SinhVienSelectAllResult">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GioiTinh" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DanToc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MaLop" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.BangDiemHP" Method="BangDiemHP">
+    <Parameter Name="malop" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="mamon" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="BangDiemHPResult">
+      <Column Name="MaSV" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DiemHS1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="DiemHS2" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DiemHP_Updatelan1" Method="DiemHP_Updatelan1">
+    <Parameter Name="diemlan1" Type="System.Double" DbType="Float" />
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSV" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DiemHP_Updatelan2" Method="DiemHP_Updatelan2">
+    <Parameter Name="diemlan2" Type="System.Double" DbType="Float" />
+    <Parameter Name="maMon" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="maSV" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

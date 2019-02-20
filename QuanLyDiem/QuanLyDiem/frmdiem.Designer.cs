@@ -50,11 +50,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btncapnhat = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.maSVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maMonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemHS1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diemHS2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDiem = new System.Windows.Forms.DataGridView();
             this.diemBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.quanLyDiemDataSet = new QuanLyDiem.QuanLyDiemDataSet();
             this.monHocBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -69,8 +65,13 @@
             this.quanLyDiemDataSet2 = new QuanLyDiem.QuanLyDiemDataSet2();
             this.lopBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lopTableAdapter = new QuanLyDiem.QuanLyDiemDataSet2TableAdapters.LopTableAdapter();
+            this.txtMaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtNgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDiem1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDiem2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).BeginInit();
@@ -161,6 +162,7 @@
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(121, 21);
             this.cbLop.TabIndex = 9;
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
             // cbmonhoc
             // 
@@ -169,6 +171,7 @@
             this.cbmonhoc.Name = "cbmonhoc";
             this.cbmonhoc.Size = new System.Drawing.Size(121, 21);
             this.cbmonhoc.TabIndex = 10;
+            this.cbmonhoc.SelectedIndexChanged += new System.EventHandler(this.cbmonhoc_SelectedIndexChanged);
             // 
             // cbhocky
             // 
@@ -255,56 +258,34 @@
             this.btncapnhat.TabIndex = 21;
             this.btncapnhat.Text = "Cập nhật dữ liệu";
             this.btncapnhat.UseVisualStyleBackColor = true;
+            this.btncapnhat.Click += new System.EventHandler(this.btncapnhat_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dataDiem);
             this.panel1.Location = new System.Drawing.Point(-1, 163);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 199);
             this.panel1.TabIndex = 24;
             // 
-            // dataGridView1
+            // dataDiem
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.maSVDataGridViewTextBoxColumn,
-            this.maMonDataGridViewTextBoxColumn,
-            this.diemHS1DataGridViewTextBoxColumn,
-            this.diemHS2DataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.diemBindingSource1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(799, 199);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // maSVDataGridViewTextBoxColumn
-            // 
-            this.maSVDataGridViewTextBoxColumn.DataPropertyName = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.HeaderText = "MaSV";
-            this.maSVDataGridViewTextBoxColumn.Name = "maSVDataGridViewTextBoxColumn";
-            this.maSVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maMonDataGridViewTextBoxColumn
-            // 
-            this.maMonDataGridViewTextBoxColumn.DataPropertyName = "MaMon";
-            this.maMonDataGridViewTextBoxColumn.HeaderText = "MaMon";
-            this.maMonDataGridViewTextBoxColumn.Name = "maMonDataGridViewTextBoxColumn";
-            // 
-            // diemHS1DataGridViewTextBoxColumn
-            // 
-            this.diemHS1DataGridViewTextBoxColumn.DataPropertyName = "DiemHS1";
-            this.diemHS1DataGridViewTextBoxColumn.HeaderText = "DiemHS1";
-            this.diemHS1DataGridViewTextBoxColumn.Name = "diemHS1DataGridViewTextBoxColumn";
-            // 
-            // diemHS2DataGridViewTextBoxColumn
-            // 
-            this.diemHS2DataGridViewTextBoxColumn.DataPropertyName = "DiemHS2";
-            this.diemHS2DataGridViewTextBoxColumn.HeaderText = "DiemHS2";
-            this.diemHS2DataGridViewTextBoxColumn.Name = "diemHS2DataGridViewTextBoxColumn";
+            this.dataDiem.AutoGenerateColumns = false;
+            this.dataDiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.txtMaSV,
+            this.txtTenSV,
+            this.txtNgaySinh,
+            this.txtDiem1,
+            this.txtDiem2});
+            this.dataDiem.DataSource = this.diemBindingSource1;
+            this.dataDiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataDiem.Location = new System.Drawing.Point(0, 0);
+            this.dataDiem.Name = "dataDiem";
+            this.dataDiem.Size = new System.Drawing.Size(799, 199);
+            this.dataDiem.TabIndex = 0;
+            this.dataDiem.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDiem_CellEndEdit);
             // 
             // diemBindingSource1
             // 
@@ -394,11 +375,42 @@
             // 
             this.lopTableAdapter.ClearBeforeFill = true;
             // 
+            // txtMaSV
+            // 
+            this.txtMaSV.DataPropertyName = "MaSV";
+            this.txtMaSV.HeaderText = "Mã sinh viên";
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.ReadOnly = true;
+            // 
+            // txtTenSV
+            // 
+            this.txtTenSV.DataPropertyName = "TenSV";
+            this.txtTenSV.HeaderText = "Họ tên";
+            this.txtTenSV.Name = "txtTenSV";
+            // 
+            // txtNgaySinh
+            // 
+            this.txtNgaySinh.DataPropertyName = "NgaySinh";
+            this.txtNgaySinh.HeaderText = "Ngày sinh";
+            this.txtNgaySinh.Name = "txtNgaySinh";
+            // 
+            // txtDiem1
+            // 
+            this.txtDiem1.DataPropertyName = "DiemHS1";
+            this.txtDiem1.HeaderText = "Điểm lần 1";
+            this.txtDiem1.Name = "txtDiem1";
+            // 
+            // txtDiem2
+            // 
+            this.txtDiem2.DataPropertyName = "DiemHS2";
+            this.txtDiem2.HeaderText = "Điểm lần 2";
+            this.txtDiem2.Name = "txtDiem2";
+            // 
             // frmdiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 360);
+            this.ClientSize = new System.Drawing.Size(903, 297);
             this.Controls.Add(this.lbmahk);
             this.Controls.Add(this.txtmahk);
             this.Controls.Add(this.btnthemmon);
@@ -429,7 +441,7 @@
             this.Text = "frmdiem";
             this.Load += new System.EventHandler(this.frmdiem_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.diemBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyDiemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.monHocBindingSource)).EndInit();
@@ -474,16 +486,12 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btncapnhat;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataDiem;
         private QuanLyDiemDataSet quanLyDiemDataSet;
         private System.Windows.Forms.BindingSource monHocBindingSource;
         private QuanLyDiemDataSetTableAdapters.MonHocTableAdapter monHocTableAdapter;
         private System.Windows.Forms.BindingSource diemBindingSource;
         private QuanLyDiemDataSetTableAdapters.DiemTableAdapter diemTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maSVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maMonDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diemHS1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diemHS2DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource diemBindingSource1;
         private System.Windows.Forms.Button btnxoahk;
         private System.Windows.Forms.Button btnluumon;
@@ -493,5 +501,10 @@
         private QuanLyDiemDataSet2 quanLyDiemDataSet2;
         private System.Windows.Forms.BindingSource lopBindingSource;
         private QuanLyDiemDataSet2TableAdapters.LopTableAdapter lopTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtMaSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtTenSV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtNgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtDiem1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn txtDiem2;
     }
 }

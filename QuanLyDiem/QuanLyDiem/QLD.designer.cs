@@ -131,6 +131,48 @@ namespace QuanLyDiem
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon, tenMon, soTC, maHK);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHPInsert")]
+		public int DiemHPInsert([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon, maSV);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHPSearch")]
+		public ISingleResult<DiemHPSearchResult> DiemHPSearch([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maMon, maSV);
+			return ((ISingleResult<DiemHPSearchResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SinhVienSelectAll")]
+		public ISingleResult<SinhVienSelectAllResult> SinhVienSelectAll()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SinhVienSelectAllResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.BangDiemHP")]
+		public ISingleResult<BangDiemHPResult> BangDiemHP([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string malop, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string mamon)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), malop, mamon);
+			return ((ISingleResult<BangDiemHPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHP_Updatelan1")]
+		public int DiemHP_Updatelan1([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> diemlan1, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diemlan1, maMon, maSV);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DiemHP_Updatelan2")]
+		public int DiemHP_Updatelan2([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Float")] System.Nullable<double> diemlan2, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maMon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string maSV)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), diemlan2, maMon, maSV);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	public partial class GetMonHocResult
@@ -376,6 +418,318 @@ namespace QuanLyDiem
 				if ((this._MaHK != value))
 				{
 					this._MaHK = value;
+				}
+			}
+		}
+	}
+	
+	public partial class DiemHPSearchResult
+	{
+		
+		private string _MaSV;
+		
+		private string _MaMon;
+		
+		private System.Nullable<double> _DiemHS1;
+		
+		private System.Nullable<double> _DiemHS2;
+		
+		public DiemHPSearchResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaSV
+		{
+			get
+			{
+				return this._MaSV;
+			}
+			set
+			{
+				if ((this._MaSV != value))
+				{
+					this._MaSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaMon", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaMon
+		{
+			get
+			{
+				return this._MaMon;
+			}
+			set
+			{
+				if ((this._MaMon != value))
+				{
+					this._MaMon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemHS1", DbType="Float")]
+		public System.Nullable<double> DiemHS1
+		{
+			get
+			{
+				return this._DiemHS1;
+			}
+			set
+			{
+				if ((this._DiemHS1 != value))
+				{
+					this._DiemHS1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemHS2", DbType="Float")]
+		public System.Nullable<double> DiemHS2
+		{
+			get
+			{
+				return this._DiemHS2;
+			}
+			set
+			{
+				if ((this._DiemHS2 != value))
+				{
+					this._DiemHS2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SinhVienSelectAllResult
+	{
+		
+		private string _MaSV;
+		
+		private string _TenSV;
+		
+		private System.Nullable<System.DateTime> _NgaySinh;
+		
+		private System.Nullable<bool> _GioiTinh;
+		
+		private string _DanToc;
+		
+		private string _Diachi;
+		
+		private int _MaLop;
+		
+		public SinhVienSelectAllResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaSV
+		{
+			get
+			{
+				return this._MaSV;
+			}
+			set
+			{
+				if ((this._MaSV != value))
+				{
+					this._MaSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSV", DbType="NVarChar(50)")]
+		public string TenSV
+		{
+			get
+			{
+				return this._TenSV;
+			}
+			set
+			{
+				if ((this._TenSV != value))
+				{
+					this._TenSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgaySinh
+		{
+			get
+			{
+				return this._NgaySinh;
+			}
+			set
+			{
+				if ((this._NgaySinh != value))
+				{
+					this._NgaySinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GioiTinh", DbType="Bit")]
+		public System.Nullable<bool> GioiTinh
+		{
+			get
+			{
+				return this._GioiTinh;
+			}
+			set
+			{
+				if ((this._GioiTinh != value))
+				{
+					this._GioiTinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DanToc", DbType="NVarChar(50)")]
+		public string DanToc
+		{
+			get
+			{
+				return this._DanToc;
+			}
+			set
+			{
+				if ((this._DanToc != value))
+				{
+					this._DanToc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diachi", DbType="NVarChar(100)")]
+		public string Diachi
+		{
+			get
+			{
+				return this._Diachi;
+			}
+			set
+			{
+				if ((this._Diachi != value))
+				{
+					this._Diachi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLop", DbType="Int NOT NULL")]
+		public int MaLop
+		{
+			get
+			{
+				return this._MaLop;
+			}
+			set
+			{
+				if ((this._MaLop != value))
+				{
+					this._MaLop = value;
+				}
+			}
+		}
+	}
+	
+	public partial class BangDiemHPResult
+	{
+		
+		private string _MaSV;
+		
+		private string _TenSV;
+		
+		private System.Nullable<System.DateTime> _NgaySinh;
+		
+		private System.Nullable<double> _DiemHS1;
+		
+		private System.Nullable<double> _DiemHS2;
+		
+		public BangDiemHPResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSV", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaSV
+		{
+			get
+			{
+				return this._MaSV;
+			}
+			set
+			{
+				if ((this._MaSV != value))
+				{
+					this._MaSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSV", DbType="NVarChar(50)")]
+		public string TenSV
+		{
+			get
+			{
+				return this._TenSV;
+			}
+			set
+			{
+				if ((this._TenSV != value))
+				{
+					this._TenSV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgaySinh", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NgaySinh
+		{
+			get
+			{
+				return this._NgaySinh;
+			}
+			set
+			{
+				if ((this._NgaySinh != value))
+				{
+					this._NgaySinh = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemHS1", DbType="Float")]
+		public System.Nullable<double> DiemHS1
+		{
+			get
+			{
+				return this._DiemHS1;
+			}
+			set
+			{
+				if ((this._DiemHS1 != value))
+				{
+					this._DiemHS1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiemHS2", DbType="Float")]
+		public System.Nullable<double> DiemHS2
+		{
+			get
+			{
+				return this._DiemHS2;
+			}
+			set
+			{
+				if ((this._DiemHS2 != value))
+				{
+					this._DiemHS2 = value;
 				}
 			}
 		}
