@@ -55,6 +55,7 @@
     <Compile Include="Entity\Class.cs" />
     <Compile Include="Entity\Connection.cs" />
     <Compile Include="Entity\SinhVien.cs" />
+    <Compile Include="Entity\XuLy.cs" />
     <Compile Include="frmBangDiemCT.cs">
       <SubType>Form</SubType>
     </Compile>
