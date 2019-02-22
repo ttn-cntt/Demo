@@ -65,5 +65,16 @@ namespace QuanLyDiem.Properties {
                 return ((string)(this["QuanLyDiemConnectionString3"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-LD9JPCL\\SQLEXPRESS;Initial Catalog=QuanLyDiem;Integrated Secu" +
+            "rity=True")]
+        public string QuanLyDiemConnectionString4 {
+            get {
+                return ((string)(this["QuanLyDiemConnectionString4"]));
+            }
+        }
     }
 }

@@ -55,6 +55,7 @@
             this.txtdiemhp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtchu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBangdiem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -257,7 +258,7 @@
             this.txtso});
             this.dtgBangdiem.Location = new System.Drawing.Point(179, 101);
             this.dtgBangdiem.Name = "dtgBangdiem";
-            this.dtgBangdiem.Size = new System.Drawing.Size(606, 160);
+            this.dtgBangdiem.Size = new System.Drawing.Size(662, 160);
             this.dtgBangdiem.TabIndex = 20;
             // 
             // txtmamon
@@ -296,11 +297,23 @@
             this.txtso.HeaderText = "Điền số";
             this.txtso.Name = "txtso";
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(722, 68);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 21;
+            this.btnExport.Text = "Export Exel";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // frmBangDiemCT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(786, 261);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(892, 261);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.dtgBangdiem);
             this.Controls.Add(this.lblXL);
             this.Controls.Add(this.lblTB);
@@ -360,5 +373,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn txtdiemhp;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtchu;
         private System.Windows.Forms.DataGridViewTextBoxColumn txtso;
+        private System.Windows.Forms.Button btnExport;
     }
 }
